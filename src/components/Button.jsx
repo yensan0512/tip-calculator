@@ -1,11 +1,11 @@
 import React from "react";
 import styled from 'styled-components';
 
-const Wrapper = styled.button(({ backgroundPass, colorPass }) => `
+export const Wrapper = styled.button(({ backgroundPass, colorPass }) => `
     background: ${backgroundPass};
     color: ${colorPass};
-    font-size:18px;
-    padding:5px;
+    font-size:25px;
+    padding:8px;
     border-radius:5px;
     border:0;
 `);

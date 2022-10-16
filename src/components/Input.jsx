@@ -1,12 +1,19 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const Wrapper = styled.div`
+  width:100%;
+`;
+
+const Label = styled.div`
+  font-size:20px;
+  color:var(--grayish-cyan);
 
 `;
 
 const InputContainer = styled.div`
   position: relative;
+  width:100%;
 
   & > img {
     position: absolute;
@@ -17,11 +24,11 @@ const InputContainer = styled.div`
 `;
 
 const InputValue = styled.input`
-  font-size:20px;
+  font-size:24px;
   color:var(--very-dark-cyan);
-  background:var(--very-ligh-grayish-cyan:);
+  background:var(--very-ligh-grayish-cyan);
   border:0;
-  border-radius:2px;
+  border-radius:8px;
   text-align:right;
   padding: 0 20px;
 `;
@@ -36,7 +43,7 @@ const Input = ({ title, imgType, onChange, value }) => {
 
   return (
     <Wrapper>
-      <p style={{ fontSize: "12px" }}>{title}</p>
+      <Label>{title}</Label>
 
       <InputContainer>
         <img src={ImgPath} />
