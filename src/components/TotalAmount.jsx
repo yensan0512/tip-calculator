@@ -11,6 +11,15 @@ const Wrapper = styled.div`
   ${$Button} {
     width:100%;
   }
+
+  @media only screen and (min-width: 800px) {
+    width:50%;
+    border-radius:40x;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+  }
 `;
 
 const Container = styled.div`
@@ -24,6 +33,7 @@ const FlexContainer = styled.div`
 
   display:flex;
   flex-direction:column;
+  justify-content: center;
 `;
 
 const Label = styled.div`
@@ -43,6 +53,10 @@ const Text = styled.div`
 
   display:flex;
   justify-content:flex-end;
+
+  @media only screen and (min-width: 800px) {
+    font-size:50px;
+  }
 `;
 
 

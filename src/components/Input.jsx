@@ -2,7 +2,6 @@ import React from "react";
 import styled from 'styled-components/macro';
 
 const Wrapper = styled.div`
-  width:100%;
 `;
 
 const Label = styled.div`
@@ -11,9 +10,8 @@ const Label = styled.div`
 
 `;
 
-const InputContainer = styled.div`
+export const InputContainer = styled.div`
   position: relative;
-  width:100%;
 
   & > img {
     position: absolute;
@@ -23,7 +21,7 @@ const InputContainer = styled.div`
   }
 `;
 
-const InputValue = styled.input`
+export const InputValue = styled.input`
   font-size:24px;
   color:var(--very-dark-cyan);
   background:var(--very-ligh-grayish-cyan);
@@ -31,9 +29,10 @@ const InputValue = styled.input`
   border-radius:8px;
   text-align:right;
   padding: 0 20px;
+  width:100%;
 `;
 
-const Input = ({ title, imgType, onChange, value }) => {
+const Input = ({ title, imgType, onChange, value, placeholder }) => {
   var ImgPath;
 
   if (imgType === "dollar")
@@ -50,6 +49,7 @@ const Input = ({ title, imgType, onChange, value }) => {
         <InputValue
           value={value}
           onChange={e => onChange(e.target.value)}
+          placeholder={placeholder}
         />
       </InputContainer>
     </Wrapper>

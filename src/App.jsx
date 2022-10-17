@@ -48,9 +48,32 @@ const Container = styled.div`
   flex-direction:column;
   align-item:center;
   justify-content:space-between;
+
+  @media only screen and (min-width: 800px) {
+    flex-direction:row;
+    gap:70px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:950px;
+    height:450px;
+    border-bottom-left-radius:40px;
+    border-bottom-right-radius:40px;
+  }
 `;
 
+const InnerContainer = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
+  @media only screen and (min-width: 800px) {
+    justify-content: space-between;
+    width:50%;
+  }
+
+`;
 
 
 function App() {
@@ -58,10 +81,10 @@ function App() {
   const [person, setPerson] = useState("");
   const [tipPercent, setTipPercent] = useState(5);
 
-  let tipAmount = 0;
-  let total = 0;
-  let tipAmountString = "0";
-  let totalString = "0";
+  let tipAmount = 0.00;
+  let total = 0.00;
+  let tipAmountString = "0.00";
+  let totalString = "0.00";
 
 
   if (bill && person) {
@@ -86,7 +109,7 @@ function App() {
         <p>TIER</p>
       </Title>
       <Container>
-
+        <InnerContainer>
         <Input
           title={"Bill"}
           imgType={"dollar"}
@@ -105,11 +128,12 @@ function App() {
           value={person}
           onChange={setPerson}
         />
-
+        </InnerContainer>
         <TotalAmount
           tip={tipAmountString}
           total={totalString}
           onReset={handleReset}
+          
         />
 
 

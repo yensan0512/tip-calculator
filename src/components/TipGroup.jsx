@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import Button from "./Button";
+import Input, {InputContainer,InputValue} from "./Input";
 
 const Wrapper = styled.div`
   width:100%;
@@ -8,7 +9,6 @@ const Wrapper = styled.div`
   display:flex;
   flex-direction:column;
   gap:10px;
-
 `;
 
 const Label = styled.div`
@@ -20,6 +20,18 @@ const Container = styled.div`
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap:10px;
+
+  ${InputContainer} {
+    height:100%;
+  }
+
+  ${InputValue} {
+    height:100%;
+  }
+
+  @media only screen and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;
 
 export default ({ value, onChange }) => {
@@ -62,9 +74,9 @@ export default ({ value, onChange }) => {
         >
           25%
         </Button>
-        <Button buttonType={"active"}>
-          Custom
-        </Button>
+        <Input 
+        placeholder={"Custom"}
+        onChange={(x) => onChange(x)}/>
 
       </Container>
     </Wrapper >

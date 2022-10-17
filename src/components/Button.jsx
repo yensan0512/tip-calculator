@@ -8,6 +8,7 @@ export const Wrapper = styled.button(({ backgroundPass, colorPass }) => `
     padding:8px;
     border-radius:5px;
     border:0;
+    cursor:pointer;
 `);
 
 // buttonType = active,inactive,custom
